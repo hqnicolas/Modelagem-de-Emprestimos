@@ -34,7 +34,7 @@ Acesse: **http://localhost:8501**
 
 ### Análise Individual
 
-1. Acesse a aba **"🔍 Análise Individual"**
+1. Acesse a aba **"Análise Individual"**
 2. Preencha os dados do cliente nos formulários
 3. Clique em **"Analisar Crédito"**
 4. Visualize o resultado: Aprovado ou Rejeitado
