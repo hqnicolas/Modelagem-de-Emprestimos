@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+streamlit.log
+nohup.out
+
+# Git
+.git/
+.gitignore
+
+# Dados de teste
+X_test.csv
+X_train.csv
+y_test.csv
+y_train.csv
+
+# Documentação
+# README.md
+# GUIA_RAPIDO.md
+
+# Scripts de desenvolvimento
+test_model.py
+run.sh
