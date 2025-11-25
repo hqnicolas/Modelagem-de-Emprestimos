@@ -2,7 +2,7 @@
 
 ### Preparar Arquivos do Modelo
 
-Execute o notebook **`Etapa5_Modelagem_Pedro.ipynb`** no Google Colab e baixe:
+Execute o notebook [Etapa5_Modelagem_Pedro.ipynb](https://github.com/hqnicolas/Machine-Learning/blob/main/ABP/Modelagem-de-Emprestimos/Etapa5_Modelagem.ipynb) no Google Colab e baixe:
 -  `lgbm_model_optimized.pkl`
 -  `scaler.pkl`
 
