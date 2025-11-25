@@ -238,15 +238,15 @@ with tab1:
                 col1, col2 = st.columns(2)
                 
                 with col1:
-                    if prediction == 0:
+                    if prediction == 1:
                         st.markdown('<div class="result-approved">', unsafe_allow_html=True)
                         st.markdown("### CRÉDITO APROVADO")
-                        st.markdown(f"**Probabilidade de Aprovação:** {probability[0]*100:.2f}%")
+                        st.markdown(f"**Probabilidade de Aprovação:** {probability[1]*100:.2f}%")
                         st.markdown("</div>", unsafe_allow_html=True)
                     else:
                         st.markdown('<div class="result-rejected">', unsafe_allow_html=True)
                         st.markdown("### CRÉDITO REJEITADO")
-                        st.markdown(f"**Probabilidade de Rejeição:** {probability[1]*100:.2f}%")
+                        st.markdown(f"**Probabilidade de Rejeição:** {probability[0]*100:.2f}%")
                         st.markdown("</div>", unsafe_allow_html=True)
                 
                 with col2:
@@ -261,7 +261,7 @@ with tab1:
                 st.markdown("** Distribuição de Probabilidade**")
                 prob_df = pd.DataFrame({
                     'Classe': ['Aprovado', 'Rejeitado'],
-                    'Probabilidade': [probability[0]*100, probability[1]*100]
+                    'Probabilidade': [probability[1]*100, probability[0]*100]
                 })
                 st.bar_chart(prob_df.set_index('Classe'))
                 
@@ -349,9 +349,9 @@ with tab2:
                     
                     # Adicionar resultados ao DataFrame original
                     results_df = batch_data.copy()
-                    results_df['Predição'] = ['Aprovado' if p == 0 else 'Rejeitado' for p in predictions]
-                    results_df['Prob_Aprovado'] = probabilities[:, 0]
-                    results_df['Prob_Rejeitado'] = probabilities[:, 1]
+                    results_df['Predição'] = ['Aprovado' if p == 1 else 'Rejeitado' for p in predictions]
+                    results_df['Prob_Aprovado'] = probabilities[:, 1]
+                    results_df['Prob_Rejeitado'] = probabilities[:, 0]
                     
                     # Estatísticas
                     st.markdown("---")
@@ -362,13 +362,13 @@ with tab2:
                     with col1:
                         st.metric("Total de Análises", len(batch_data))
                     with col2:
-                        aprovados = (predictions == 0).sum()
+                        aprovados = (predictions == 1).sum()
                         st.metric("Aprovados", aprovados, delta=f"{(aprovados/len(batch_data)*100):.1f}%")
                     with col3:
-                        rejeitados = (predictions == 1).sum()
+                        rejeitados = (predictions == 0).sum()
                         st.metric("Rejeitados", rejeitados, delta=f"{(rejeitados/len(batch_data)*100):.1f}%")
                     with col4:
-                        prob_media = probabilities[:, 0].mean()
+                        prob_media = probabilities[:, 1].mean()
                         st.metric("Prob. Média Aprovação", f"{prob_media*100:.1f}%")
                     
                     # Mostrar resultados
