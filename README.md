@@ -28,7 +28,7 @@ A aplicação permite análise individual de clientes e análise em lote via upl
 ### Pré-requisitos
 
 1. **Executar o Notebook da Etapa 5**
-   - Abra `[Etapa5_Modelagem_Pedro.ipynb](https://github.com/hqnicolas/Machine-Learning/tree/main/ABP/Modelagem-de-Emprestimos)` no Google Colab
+   - Abra [Etapa5_Modelagem_Pedro.ipynb](https://github.com/hqnicolas/Machine-Learning/tree/main/ABP/Modelagem-de-Emprestimos) no Google Colab
    - Execute todas as células
    - Baixe os arquivos gerados:
      - `lgbm_model_optimized.pkl`
